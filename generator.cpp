@@ -10,6 +10,15 @@ void rectangle(int row, int column){
     }
 }
 
+void rightTriangle(int row){
+    for (int i = 1; i <= row; i++){
+        for (int j = 1; j <= i; j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
 int main(){
     int pattern, row, column;
     do
@@ -32,6 +41,11 @@ int main(){
             cout << "Masukkan jumlah kolom: ";
             cin >> column;
             rectangle(row, column);  
+            break;
+        case 2:
+            cout << "Masukkan jumlah baris: ";
+            cin >> row;
+            rightTriangle(row);  
             break;
         case 99:
         cout << "Program dihentikan" << endl;

@@ -34,6 +34,15 @@ void rightTriangleRightBot(int row){
     }
 }
 
+void rightTriangleLeftTop(int row){
+    for (int i = 1; i <= row; i++){
+        for (int j = row; j >=i; j--){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
 void rightTriangle(int row){
     int typeTriangle;
     cout << "Jenis segitiga siku siku" << endl;
@@ -51,14 +60,15 @@ void rightTriangle(int row){
     case 2:
         rightTriangleRightBot(row);
         break;
+    case 3:
+        rightTriangleLeftTop(row);
+        break;
     
     default:
     cout << "Jenis ini tidak tersedia!" << endl;
         break;
     }
 }
-
-
 
 void triangle(int row){
     int row2=row;
@@ -112,6 +122,7 @@ int main(){
             break;
         
         default:
+        cout << "Bentuk tidak tersedia!" << endl;
             break;
         }
     } while (pattern != 99);

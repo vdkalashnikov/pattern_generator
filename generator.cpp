@@ -10,7 +10,7 @@ void rectangle(int row, int column){
     }
 }
 
-void rightTriangle(int row){
+void rightTriangleLeftBot(int row){
     for (int i = 1; i <= row; i++){
         for (int j = 1; j <= i; j++){
             cout << "*";
@@ -18,6 +18,47 @@ void rightTriangle(int row){
         cout << "\n";
     }
 }
+
+void rightTriangleRightBot(int row){
+    int col = row;
+    for (int i = 1; i <= row; i++){
+        for (int j = 1; j <= row; j++){
+            if (j < col){
+                cout << " ";
+            } else {
+                cout << "*";
+            }
+        }
+        cout << "\n";
+        col--;
+    }
+}
+
+void rightTriangle(int row){
+    int typeTriangle;
+    cout << "Jenis segitiga siku siku" << endl;
+    cout << "1. Kiri bawah" << endl;
+    cout << "2. Kanan bawah" << endl;
+    cout << "3. Kiri atas" << endl;
+    cout << "4. Kanan atas" << endl;
+    cout << "\n" << "Pilih jenis: ";
+    cin >> typeTriangle;
+    switch (typeTriangle)
+    {
+    case 1:
+        rightTriangleLeftBot(row);
+        break;
+    case 2:
+        rightTriangleRightBot(row);
+        break;
+    
+    default:
+    cout << "Jenis ini tidak tersedia!" << endl;
+        break;
+    }
+}
+
+
 
 void triangle(int row){
     int row2=row;

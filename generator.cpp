@@ -19,6 +19,20 @@ void rightTriangle(int row){
     }
 }
 
+void triangle(int row){
+    int row2=row;
+    for (int i = 1; i <= row; i++){
+        for (int j = 1; j <= row2 - 1; j++){
+            cout << " ";
+        }
+        for (int k = 1; k < i + i; k++){
+            cout << "*";
+        }
+        cout << "\n";
+        row2--;
+    }
+}
+
 int main(){
     int pattern, row, column;
     do
@@ -46,6 +60,11 @@ int main(){
             cout << "Masukkan jumlah baris: ";
             cin >> row;
             rightTriangle(row);  
+            break;
+        case 3:
+            cout << "Masukkan jumlah baris: ";
+            cin >> row;
+            triangle(row);  
             break;
         case 99:
         cout << "Program dihentikan" << endl;
